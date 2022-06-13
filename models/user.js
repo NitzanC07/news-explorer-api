@@ -3,19 +3,6 @@ const bcrypt = require('bcrypt');
 
 // Creating template for user information.
 const userSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    validate: {
-      validator: /[\w.-]+@[\w.-]+/ig,
-    },
-  password: {
-    type: String,
-    required: true,
-    minlength: 4,
-    select: false,
-  },
   name: {
     type: String,
     required: true,
@@ -23,6 +10,19 @@ const userSchema = new mongoose.Schema({
     minlength: 2,
     maxlength: 30,
   },
+  password: {
+    type: String,
+    required: true,
+    minlength: 4,
+    select: false,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    validate: {
+      validator: /[\w.-]+@[\w.-]+/ig,
+    },
 },
 });
 
@@ -31,14 +31,14 @@ userSchema.statics.findUserByCredentials = function findUserByCredentials(email,
     .then((user) => {
       if (!user) {
         /** When the user not found in DB */
-        return Promise.reject(new Error('Incorrect email'));
+        return Promise.reject(new Error('Incorrect email or password'));
       }
       /** When the user found in DB */
       return bcrypt.compare(password, user.password)
         .then((matched) => {
           if (!matched) {
             /** When the password not equal to the password that storage in DB */
-            return Promise.reject(new Error('Incorrect password'));
+            return Promise.reject(new Error('Incorrect email or password'));
           }
 
           /** When the password is correct return user to controller. */

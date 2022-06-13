@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const date = new Date();
 // const bcrypt = require('bcrypt');
 
 // Creating template for user information.
