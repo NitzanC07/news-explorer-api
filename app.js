@@ -29,7 +29,7 @@ const {
 } = require('./middleware/auth');
 
 const allowedOrigins = [
-  'http://localhost:3000',
+  'http://146.148.67.231:3000',
 ];
 
 mongoose.connect('mongodb://localhost:27017/newsExplorer');
