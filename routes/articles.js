@@ -36,11 +36,11 @@ router.post('/', celebrate({
       .required()
       .min(2).max(30),
     link: Joi.string()
+      .uri()
       .required(),
-      // .pattern(new RegExp('/^http(s)?:\/{2}(w{3}.)?[\w-]+.\w+/ig')), //eslint-disable-line
     image: Joi.string()
+      .uri()
       .required(),
-      // .pattern(new RegExp('/^http(s)?:\/{2}(w{3}.)?[\w-]+.\w+/ig')) //eslint-disable-line
   }),
 }), createNewArticle);
 
