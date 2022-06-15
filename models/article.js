@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
-const date = new Date();
-// const bcrypt = require('bcrypt');
+
+// const date = new Date();
 
 // Creating template for user information.
 const articleSchema = new mongoose.Schema({
   keyword: {
     type: String,
     required: true,
-    },
+  },
   title: {
     type: String,
     required: true,
@@ -41,7 +41,7 @@ const articleSchema = new mongoose.Schema({
   owner: {
     type: String,
     select: false,
-  }
+  },
 });
 
 // Creating a model and export it for user information.

@@ -15,23 +15,23 @@ const createUser = async (req, res, next) => {
       .then((user) => {
         res.status(201).send({
           name: user.name,
-          email: user.email
+          email: user.email,
         });
       })
       .catch((err) => {
         if (err.name === 'MongoServerError') {
-          next(new ErrorHandler(409, `${err.name}: User already exists.`))
+          next(new ErrorHandler(409, `${err.name}: User already exists.`));
         } else {
-          next(new ErrorHandler(401, `${err.name}: Email or password are missing.`))
+          next(new ErrorHandler(401, `${err.name}: Email or password are missing.`));
         }
       });
   } catch (err) {
     if (err.name === 'ValidationError') {
       console.log('Error in createUser, status 400: ', err);
-      next(new ErrorHandler(400, `${err.name}: Something wrong with the input.`))
+      next(new ErrorHandler(400, `${err.name}: Something wrong with the input.`));
     } else {
       console.log('Error in createUser, status 500: ', err.name);
-      next(new ErrorHandler(500, `${err}: Somthing went wrong with the server.`))
+      next(new ErrorHandler(500, `${err}: Somthing went wrong with the server.`));
     }
   }
 };
@@ -49,7 +49,7 @@ const loginUser = async (req, res, next) => {
       res.status(200).json(token);
     })
     .catch((err) => {
-      next(new ErrorHandler(401, `Incorrect email or password: ${err}.`))
+      next(new ErrorHandler(401, `Incorrect email or password: ${err}.`));
     });
 };
 
