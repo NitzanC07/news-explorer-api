@@ -16,8 +16,6 @@ const {
 
 /** Every path begin with: /articles/... */
 
-const date = new Date();
-
 router.get('/', getArticles);
 
 router.post('/', celebrate({
