@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-const rateLimiter = require('express-rate-limit');
+const limiter = require('./helpers/limiter');
 const cors = require('cors');
 const {
   errors,
@@ -19,14 +19,8 @@ require('dotenv').config();
 
 const app = express();
 
-const limiter = rateLimiter({
-  windowMs: 10 * 60 * 1000, // 10 minutes.
-  max: 50, // Maximum of 100 requeset from each IP to the server.
-})
-
 const { PORT = 3000 } = process.env;
-const usersRouter = require('./routes/users');
-const articlesRouter = require('./routes/articles');
+const indexRoutes = require('./routes/index');
 const {
   createUser,
   loginUser,
@@ -60,8 +54,7 @@ app.post('/signin', loginUser);
 app.use(auth);
 
 /** Athuorized routes */
-app.use('/users', usersRouter);
-app.use('/articles', articlesRouter);
+app.use('/', indexRoutes);
 
 app.use(errorLogger);
 app.use(errors());
