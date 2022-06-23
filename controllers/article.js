@@ -4,7 +4,7 @@ const { ErrorHandler } = require('../helpers/error');
 const getArticles = async (req, res, next) => {
   try {
     const owner = req.user._id;
-    const articles = await Article.find({owner: owner});
+    const articles = await Article.find({ owner });
     res.status(200).send(articles);
     return articles;
   } catch (err) {
