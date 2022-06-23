@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-const limiter = require('./helpers/limiter');
+// const limiter = require('./helpers/limiter');
 const cors = require('cors');
 const {
   errors,
@@ -41,7 +41,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
 
 app.use(helmet());
 app.use(bodyParser.json());
-app.use(limiter);
+// app.use(limiter);
 app.use(cors());
 app.options(allowedOrigins, cors());
 
