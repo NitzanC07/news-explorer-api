@@ -7,7 +7,6 @@ const cors = require('cors');
 const {
   errors,
 } = require('celebrate');
-const limiter = require('./helpers/limiter');
 const {
   ErrorHandler,
   customErrorHandler,
