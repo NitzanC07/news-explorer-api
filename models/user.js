@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     validate: {
       validator: /[\w.-]+@[\w.-]+/ig,
     },
-},
+  },
 });
 
 userSchema.statics.findUserByCredentials = function findUserByCredentials(email, password) {

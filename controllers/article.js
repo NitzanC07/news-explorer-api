@@ -3,7 +3,8 @@ const { ErrorHandler } = require('../helpers/error');
 
 const getArticles = async (req, res, next) => {
   try {
-    const articles = await Article.find({});
+    const owner = req.user._id;
+    const articles = await Article.find({owner: owner});
     res.status(200).send(articles);
     return articles;
   } catch (err) {
@@ -13,10 +14,14 @@ const getArticles = async (req, res, next) => {
 };
 
 const createNewArticle = async (req, res, next) => {
-  const { keyword, title, text, date, source, link, image } = req.body;
+  const {
+    keyword, title, text, date, source, link, image,
+  } = req.body;
   try {
     const owner = req.user._id;
-    const newArticle = await Article.create({ keyword, title, text, date, source, link, image, owner });
+    const newArticle = await Article.create({
+      keyword, title, text, date, source, link, image, owner,
+    });
     res.status(201).send(newArticle);
     return newArticle;
   } catch (err) {
@@ -46,7 +51,7 @@ const selectedArticle = async (req, res, next) => {
     console.log('Error in selectedArticle, status 500: ', err.name);
     return next(new ErrorHandler(500, 'Somthing went wrong with the server.'));
   }
-}
+};
 
 const deleteArticle = async (req, res, next) => {
   const articleId = req.params.article_id;

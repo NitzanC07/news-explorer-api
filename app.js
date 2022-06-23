@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
+const limiter = require('./helpers/limiter');
 const cors = require('cors');
 const {
   errors,
@@ -17,9 +18,9 @@ const {
 require('dotenv').config();
 
 const app = express();
+
 const { PORT = 3000 } = process.env;
-const usersRouter = require('./routes/users');
-const articlesRouter = require('./routes/articles');
+const indexRoutes = require('./routes/index');
 const {
   createUser,
   loginUser,
@@ -30,12 +31,20 @@ const {
 
 const allowedOrigins = [
   'http://146.148.67.231:3000',
+<<<<<<< HEAD
+=======
+  'http://localhost:3000',
+  'https://nitzan-final-project.students.nomoreparties.sbs',
+  'https://www.nitzan-final-project.students.nomoreparties.sbs',
+  'https://api.nitzan-final-project.students.nomoreparties.sbs',
+>>>>>>> 9da25735320d8629c180b533db4de1d88b984bb0
 ];
 
 mongoose.connect('mongodb://localhost:27017/newsExplorer');
 
 app.use(helmet());
 app.use(bodyParser.json());
+app.use(limiter);
 app.use(cors());
 app.options(allowedOrigins, cors());
 
@@ -48,8 +57,7 @@ app.post('/signin', loginUser);
 app.use(auth);
 
 /** Athuorized routes */
-app.use('/users', usersRouter);
-app.use('/articles', articlesRouter);
+app.use('/', indexRoutes);
 
 app.use(errorLogger);
 app.use(errors());
