@@ -31,16 +31,13 @@ const {
 
 const allowedOrigins = [
   'http://146.148.67.231:3000',
-<<<<<<< HEAD
-=======
   'http://localhost:3000',
   'https://nitzan-final-project.students.nomoreparties.sbs',
   'https://www.nitzan-final-project.students.nomoreparties.sbs',
   'https://api.nitzan-final-project.students.nomoreparties.sbs',
->>>>>>> 9da25735320d8629c180b533db4de1d88b984bb0
 ];
 
-mongoose.connect('mongodb://localhost:27017/newsExplorer');
+mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
 
 app.use(helmet());
 app.use(bodyParser.json());
