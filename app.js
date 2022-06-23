@@ -37,7 +37,7 @@ const allowedOrigins = [
   'https://api.nitzan-final-project.students.nomoreparties.sbs',
 ];
 
-mongoose.connect('mongodb://localhost:27017/newsExplorer');
+mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
 
 app.use(helmet());
 app.use(bodyParser.json());
