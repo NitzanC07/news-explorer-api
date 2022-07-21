@@ -30,7 +30,7 @@ const {
 } = require('./middleware/auth');
 
 const allowedOrigins = [
-  'http://146.148.67.231:3000',
+  'http://35.239.222.234:3000',
   'http://localhost:3000',
   'https://nitzan-final-project.students.nomoreparties.sbs',
   'https://www.nitzan-final-project.students.nomoreparties.sbs',
