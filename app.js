@@ -19,7 +19,7 @@ require('dotenv').config();
 
 const app = express();
 
-const { PORT = 3000 } = process.env;
+const { PORT = 4000 } = process.env;
 const indexRoutes = require('./routes/index');
 const {
   createUser,
