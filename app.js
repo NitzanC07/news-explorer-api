@@ -32,9 +32,6 @@ const {
 const allowedOrigins = [
   'http://35.239.222.234:3000',
   'http://localhost:3000',
-  'https://nitzan-final-project.students.nomoreparties.sbs',
-  'https://www.nitzan-final-project.students.nomoreparties.sbs',
-  'https://api.nitzan-final-project.students.nomoreparties.sbs',
 ];
 
 mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
