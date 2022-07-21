@@ -30,8 +30,8 @@ const {
 } = require('./middleware/auth');
 
 const allowedOrigins = [
-  'http://35.239.222.234:3000',
-  'http://localhost:3000',
+  'http://35.239.222.234:4000',
+  'http://localhost:4000',
 ];
 
 mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
