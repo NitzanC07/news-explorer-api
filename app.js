@@ -43,7 +43,7 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(limiter);
 app.use(cors());
-app.options('*', cors());
+app.options(allowedOrigins, cors());
 
 app.use(requestLogger);
 
