@@ -45,6 +45,9 @@ app.use(bodyParser.json());
 app.use(limiter);
 app.use(cors());
 app.options(allowedOrigins, cors());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+})
 
 app.use(requestLogger);
 
