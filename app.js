@@ -31,7 +31,7 @@ const {
 
 const allowedOrigins = [
   'http://35.239.222.234:4000/',
-  'http://localhost:4000/',
+  'http://localhost:3000/',
   'http://nitzan-fp.students.nomoredomainssbs.ru/',
   'http://www.nitzan-fp.students.nomoredomainssbs.ru/',
   'http://api.nitzan-fp.students.nomoredomainssbs.ru/'
