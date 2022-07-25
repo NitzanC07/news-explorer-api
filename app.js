@@ -30,12 +30,12 @@ const {
 } = require('./middleware/auth');
 
 const allowedOrigins = [
-  'https://35.239.222.234:4000/',
-  'localhost:3000/',
-  'localhost:4000/',
-  'https://nitzan-fp.students.nomoredomainssbs.ru/',
-  'https://www.nitzan-fp.students.nomoredomainssbs.ru/',
-  'https://api.nitzan-fp.students.nomoredomainssbs.ru/'
+  'http://localhost:3000',
+  'http://localhost:4000',
+  'https://35.239.222.234:4000',
+  'https://nitzan-fp.students.nomoredomainssbs.ru',
+  'https://www.nitzan-fp.students.nomoredomainssbs.ru',
+  'https://api.nitzan-fp.students.nomoredomainssbs.ru'
 ];
 
 mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
