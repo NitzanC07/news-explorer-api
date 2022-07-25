@@ -42,7 +42,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(limiter);
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors());
+app.options(allowedOrigins, cors());
 
 app.use(requestLogger);
 
