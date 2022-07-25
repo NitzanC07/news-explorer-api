@@ -30,8 +30,8 @@ const {
 } = require('./middleware/auth');
 
 const allowedOrigins = [
-  'http://localhost:3000',
-  'http://localhost:4000',
+  'https://localhost:3000',
+  'https://localhost:4000',
   'https://35.239.222.234:4000',
   'https://nitzan-fp.students.nomoredomainssbs.ru',
   'https://www.nitzan-fp.students.nomoredomainssbs.ru',
