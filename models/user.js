@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 // Creating template for user information.
 const userSchema = new mongoose.Schema({
-  name: {
+  username: {
     type: String,
     required: true,
     default: 'Guest',

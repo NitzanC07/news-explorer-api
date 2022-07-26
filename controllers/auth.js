@@ -5,16 +5,17 @@ const User = require('../models/user');
 
 /** Creating new user (register) to data base. With route '/users/register'. */
 const createUser = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
   try {
     bcrypt.hash(password, 10)
       .then((hash) => User.create({
+        username,
         email,
         password: hash,
       }))
       .then((user) => {
         res.status(201).send({
-          name: user.name,
+          username: user.username,
           email: user.email,
         });
       })
