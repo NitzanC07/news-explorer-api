@@ -37,7 +37,7 @@ const allowedOrigins = [
   'https://nitzan-fp.students.nomoredomainssbs.ru',
   'https://www.nitzan-fp.students.nomoredomainssbs.ru',
   'https://api.nitzan-fp.students.nomoredomainssbs.ru',
-  'https://newsapi.org'
+  'https://newsapi.org/v2/everything?apiKey=2fcf2a6183714400b92824aef8d7835e&q=nature&from=2022-07-20&to=2022-07-27&pageSize=3'
 ];
 
 mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
