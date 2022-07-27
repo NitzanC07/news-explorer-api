@@ -30,6 +30,7 @@ const {
 } = require('./middleware/auth');
 
 const allowedOrigins = [
+  'http://localhost:3000',
   'https://localhost:3000',
   'https://localhost:4000',
   'https://35.239.222.234:4000',
