@@ -32,12 +32,11 @@ const {
 const allowedOrigins = [
   'http://localhost:3000',
   'https://localhost:3000',
-  'https://localhost:4000',
   'https://35.239.222.234:4000',
   'https://nitzan-fp.students.nomoredomainssbs.ru',
   'https://www.nitzan-fp.students.nomoredomainssbs.ru',
   'https://api.nitzan-fp.students.nomoredomainssbs.ru',
-  'https://newsapi.org/v2/everything?apiKey=2fcf2a6183714400b92824aef8d7835e&q=nature&from=2022-07-20&to=2022-07-27&pageSize=3'
+  'https://newsapi.org'
 ];
 
 mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
