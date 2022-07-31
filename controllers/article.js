@@ -23,7 +23,7 @@ const createNewArticle = async (req, res, next) => {
       keyword, title, text, date, source, link, image, owner,
     });
     res.status(201).send(newArticle);
-    return;
+
   } catch (err) {
     if (err.name === 'ValidationError') {
       console.log(`Error in createNewArticle: ${err}`);
