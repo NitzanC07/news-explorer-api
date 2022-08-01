@@ -1,3 +1,4 @@
+import validator  from 'validator';
 const mongoose = require('mongoose');
 
 // const date = new Date();
@@ -27,15 +28,12 @@ const articleSchema = new mongoose.Schema({
   link: {
     type: String,
     required: true,
-    validate: {
-      validator: /^http(s)?:\/{2}(w{3}.)?[\w-]+.\w+/ig,
-    },
+    validate: [validator.isURL, "Incorrect link URL."],
   },
   image: {
     type: String,
     required: true,
-    validate: {
-      validator: /^http(s)?:\/{2}(w{3}.)?[\w-]+.\w+/ig,
+    validate: [validator.isURL, "Incorrect image URL."],
     },
   },
   owner: {
