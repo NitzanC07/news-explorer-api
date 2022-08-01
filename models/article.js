@@ -1,4 +1,4 @@
-import validator  from 'validator';
+const validator = require('validator');
 const mongoose = require('mongoose');
 
 // const date = new Date();
