@@ -35,7 +35,6 @@ const articleSchema = new mongoose.Schema({
     required: true,
     validate: [validator.isURL, "Incorrect image URL."],
     },
-  },
   owner: {
     type: String,
     select: false,
