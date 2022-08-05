@@ -81,7 +81,7 @@ const savedArticle = async (req, res, next) => {
   try {
     const article = await Article.findByIdAndUpdate(
       articleId,
-      { $addToSet: { likes: req.user._id } },
+      { $addToSet: { savedUsers: req.user._id } },
       { new: true },
     );
     if (article === null) {
@@ -104,7 +104,7 @@ const unsavedArticle = async (req, res, next) => {
   try {
     const article = await Article.findByIdAndUpdate(
       articleId,
-      { $pull: { likes: req.user._id } },
+      { $pull: { savedUsers: req.user._id } },
       { new: true },
     );
     if (article === null) {
