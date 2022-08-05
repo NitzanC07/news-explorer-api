@@ -39,6 +39,10 @@ const articleSchema = new mongoose.Schema({
     type: String,
     select: false,
   },
+  savedUsers: {
+    type: Array,
+    default: [],
+  },
 });
 
 // Creating a model and export it for user information.
