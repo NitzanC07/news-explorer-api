@@ -33,9 +33,9 @@ const allowedOrigins = [
   'http://localhost:3000',
   'https://localhost:3000',
   'https://35.232.46.248:3000',
-  'https://nitzan-fp.students.nomoredomainssbs.ru',
-  'https://www.nitzan-fp.students.nomoredomainssbs.ru',
-  'https://api.nitzan-fp.students.nomoredomainssbs.ru',
+  'https://nitzan-practicum.students.nomoredomainssbs.ru',
+  'https://www.nitzan-practicum.students.nomoredomainssbs.ru',
+  'https://api.nitzan-practicum.students.nomoredomainssbs.ru',
 ];
 
 mongoose.connect('mongodb://127.0.0.1:27017/newsExplorer');
