@@ -19,7 +19,7 @@ require('dotenv').config();
 
 const app = express();
 
-const { PORT = 4000 } = process.env;
+const { PORT = 3000 } = process.env;
 const indexRoutes = require('./routes/index');
 const {
   createUser,
@@ -32,7 +32,7 @@ const {
 const allowedOrigins = [
   'http://localhost:3000',
   'https://localhost:3000',
-  'https://35.239.222.234:4000',
+  'https://35.232.46.248:3000',
   'https://nitzan-fp.students.nomoredomainssbs.ru',
   'https://www.nitzan-fp.students.nomoredomainssbs.ru',
   'https://api.nitzan-fp.students.nomoredomainssbs.ru',
