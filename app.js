@@ -19,7 +19,7 @@ require('dotenv').config();
 
 const app = express();
 
-const { PORT = 3000 } = process.env;
+const { PORT = 4000 } = process.env;
 const indexRoutes = require('./routes/index');
 const {
   createUser,
@@ -30,6 +30,7 @@ const {
 } = require('./middleware/auth');
 
 const allowedOrigins = [
+  'http://localhost:4000',
   'http://localhost:3000',
   'https://localhost:3000',
   'https://35.232.46.248:3000',
